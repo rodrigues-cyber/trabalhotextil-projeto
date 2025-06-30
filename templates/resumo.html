@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumo Máquinas Ativas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='resumo.css') }}">
+</head>
+<body>
+    <div class="cabecalho">
+        <h1>Monitoramento Inteligente</h1>
+        <h2>Indústria Têxtil</h2>
+    </div>
+    <div class="conteudo">
+        <h3 class="titulo-secao">Resumo das Máquinas Ativas</h3>
+        <div class="cards-maquinas">
+            {% for i in range(1, 6) %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='caldeira' ~ i ~ '.png') }}" alt="Caldeira {{ i }}">
+                    <h4>Máquina de Caldeira {{ i }}</h4>
+                    <a href="{{ url_for('maquina_n', n=i) }}"><button>Acessar</button></a>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('logout') }}"><button class="botao-sair">Sair</button></a>
+    </div>
+</body>
+</html>

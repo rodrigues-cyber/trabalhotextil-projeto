@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pressão dos Tanques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #f0f4ff, #e6f0ff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #002B5B;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .valor {
+            font-size: 38px;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        a {
+            margin-top: 40px;
+            padding: 12px 30px;
+            font-size: 16px;
+            background-color: #0077ff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        a:hover {
+            background-color: #004cbf;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pressão dos Tanques</h1>
+    <div class="valor">{{ valor }}</div>
+    <a href="{{ url_for('dashboard') }}">Voltar ao Resumo</a>
+</body>
+</html>

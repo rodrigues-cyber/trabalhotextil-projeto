@@ -1,0 +1,71 @@
+<!-- resumo.html -->
+
+<h1 class="top-header">Monitoramento Inteligente<br>Indústria Têxtil</h1>
+
+<h2>Resumo das Máquinas Ativas</h2>
+
+<div class="box-container">
+
+    <!-- Temperatura -->
+    <div class="box">
+        <div class="box-title">Temperatura</div>
+        <img src="{{ url_for('static', filename='termometro1.png') }}">
+        <div class="box-text">Caldeira de Tingimento</div>
+        <div class="sensor-value">{{ sensores.temperatura }} °C</div>
+    </div>
+
+    <!-- Pressão -->
+    <div class="box">
+        <div class="box-title">Pressão</div>
+        <img src="{{ url_for('static', filename='pressao1.png') }}">
+        <div class="box-text">Tanques de Tingimento</div>
+        <div class="sensor-value">{{ sensores.pressao }} psi</div>
+    </div>
+
+    <!-- Tempo de Trabalho -->
+    <div class="box">
+        <div class="box-title">Tempo de Trabalho</div>
+        <img src="{{ url_for('static', filename='tempo1.png') }}">
+        <div class="box-text">Operação Atual</div>
+        <div class="sensor-value">{{ sensores.tempo }}</div>
+    </div>
+
+    <!-- Vazão do Corante -->
+    <div class="box">
+        <div class="box-title">Vazão do Corante</div>
+        <img src="{{ url_for('static', filename='vazao.png') }}">
+        <div class="box-text">Medidor Magnético</div>
+        <div class="sensor-value">{{ sensores.vazao }} L/min</div>
+    </div>
+
+    <!-- Condutividade / pH -->
+    <div class="box">
+        <div class="box-title">Condutividade / pH</div>
+        <img src="{{ url_for('static', filename='condutividade2.png') }}?v=2">
+        <div class="box-text">Sensor Químico</div>
+        <div class="sensor-value">
+            Cond: {{ sensores.condutividade }} mS/cm<br>
+            pH: {{ sensores.ph }}
+        </div>
+    </div>
+
+    <!-- Estado da Válvula -->
+    <div class="box">
+        <div class="box-title">Estado da Válvula</div>
+        <img src="{{ url_for('static', filename='valvula.png') }}">
+        <div class="box-text">Controle Digital</div>
+        <div class="sensor-value">{{ sensores.valvula }}</div>
+    </div>
+
+    <!-- Data e Hora -->
+    <div class="box">
+        <div class="box-title">Data e Hora</div>
+        <img src="{{ url_for('static', filename='data_hora2.png') }}?v=2" alt="Data e Hora" style="width: 100px;">
+        <div class="box-text">Última Coleta</div>
+        <div class="sensor-value">{{ sensores.timestamp }}</div>
+    </div>
+
+</div>
+
+<!-- Botão SAIR -->
+<a href="{{ url_for('logout') }}" class="btn-logout">SAIR</a>

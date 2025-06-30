@@ -1,0 +1,96 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+    height: 100vh;
+}
+
+.cabecalho {
+    background: linear-gradient(to right, #003366, #004080);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 4px solid #001f3f;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.conteudo {
+    padding: 30px;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #002b5c;
+    font-weight: bold;
+}
+
+.cards-maquinas {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 90px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    margin-bottom: 15px;
+    color: #002b5c;
+    font-weight: 600;
+}
+
+.card button {
+    padding: 10px 24px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background-color: #0059b3;
+}
+
+.botao-sair {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.botao-sair:hover {
+    background-color: #990000;
+}

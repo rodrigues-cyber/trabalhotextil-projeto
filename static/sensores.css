@@ -1,0 +1,51 @@
+
+body {
+    background: linear-gradient(to bottom right, #e0ebf9, #d0e0f0);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #003d80;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.sensor-card {
+    background-color: white;
+    padding: 1.5rem;
+    width: 180px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sensor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid #003d80;
+}
+
+.sensor-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sensor-card p {
+    font-weight: bold;
+    color: #003d80;
+    margin: 0;
+}

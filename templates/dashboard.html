@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitoramento Inteligente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='resumo.css') }}">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Monitoramento Inteligente</h1>
+        <h2>Indústria Têxtil</h2>
+    </header>
+
+    <main class="conteudo">
+        <h3 class="titulo-secao">Resumo das Máquinas Ativas</h3>
+        <div class="cards-maquinas">
+            <div class="card">
+                <img src="{{ url_for('static', filename='caldeira1.png') }}" alt="Máquina 1">
+                <h4>Máquina de Caldeira 1</h4>
+                <a href="{{ url_for('maquina1') }}"><button>Acessar</button></a>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='caldeira2.png') }}" alt="Máquina 2">
+                <h4>Máquina de Caldeira 2</h4>
+                <a href="{{ url_for('maquina2') }}"><button>Acessar</button></a>
+            </div>
+        </div>
+    </main>
+
+    <a href="{{ url_for('logout') }}"><button class="botao-sair">Sair</button></a>
+</body>
+</html>

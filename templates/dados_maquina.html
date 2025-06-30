@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+</head>
+<body style="text-align: center; font-family: Arial;">
+    <h2>{{ titulo }}</h2>
+    <table border="1" style="margin: auto;">
+        <tr>
+            <th>Máquina</th>
+            <th>{{ tipo }}</th>
+            <th>Data/Hora</th>
+        </tr>
+        {% for linha in dados %}
+        <tr>
+            <td>{{ linha[0] }}</td>
+            <td>{{ linha[1] }}</td>
+            <td>{{ linha[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/"><button>Voltar</button></a>
+</body>
+</html>

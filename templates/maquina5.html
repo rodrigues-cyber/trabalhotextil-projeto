@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Máquina 5</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_maquinas.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="header">Máquina 5 - Dados em Tempo Real</h1>
+
+    <div class="sensor-container">
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='termometro1.png') }}"> Temperatura</h4>
+        <p>{{ sensores['temperatura'] }} °C</p>
+      </div>
+
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='pressao1.png') }}"> Pressão</h4>
+        <p>{{ sensores['pressao'] }} Pa</p>
+      </div>
+
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='tempo1.png') }}"> Tempo</h4>
+        <p>{{ sensores['tempo'] }} min</p>
+      </div>
+
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='vazao.png') }}"> Vazão</h4>
+        <p>{{ sensores['vazao'] }} L/min</p>
+      </div>
+
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='condutividade2.png') }}"> Condutividade / pH</h4>
+        <p>Condutividade: {{ sensores['condutividade'] }}</p>
+        <p>pH: {{ sensores['ph'] }}</p>
+      </div>
+
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='valvula.png') }}"> Válvula</h4>
+        <p>{{ sensores['valvula'] }}</p>
+      </div>
+
+      <div class="sensor-card">
+        <h4><img src="{{ url_for('static', filename='data_hora2.png') }}"> Data/Hora</h4>
+        <p>{{ sensores['timestamp'] }}</p>
+      </div>
+    </div>
+
+    <a href="{{ url_for('graficos_maquina', n=5) }}" class="btn-voltar">📈 Ver Gráficos</a><br><br>
+<a href="{{ url_for('resumo') }}" class="btn-voltar">⬅️ Voltar ao Resumo</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráficos - Máquina {{ n }}</title>
+  <link rel="stylesheet" href="../static/style_maquinas.css">
+  <style>
+    body {
+      background-color: #e8f0ff;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .grafico-box {
+      margin-bottom: 40px;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    .grafico-box h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn-voltar:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:center;">📈 Gráficos dos Sensores - Máquina {{ n }}</h1>
+
+    <div class="grafico-box">
+      <h2>Temperatura</h2>
+      {{ grafico_temp|safe }}
+    </div>
+
+    <div class="grafico-box">
+      <h2>Pressão</h2>
+      {{ grafico_pressao|safe }}
+    </div>
+
+    <div class="grafico-box">
+      <h2>Vazão</h2>
+      {{ grafico_vazao|safe }}
+    </div>
+
+    <div class="grafico-box">
+      <h2>pH x Condutividade</h2>
+      {{ grafico_ph|safe }}
+    </div>
+
+    <div class="grafico-box">
+      <h2>Tempo de Trabalho - Curva PF</h2>
+      {{ grafico_tempo|safe }}
+    </div>
+
+    <div style="text-align:center;">
+      <a href="/maquina{{ n }}" class="btn-voltar">⬅️ Voltar à Máquina</a>
+    </div>
+  </div>
+</body>
+</html>

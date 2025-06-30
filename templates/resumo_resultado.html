@@ -1,0 +1,6 @@
+
+<h2>{{ titulo }}</h2>
+{% for item in valor %}
+  <p>Máquina {{ item[0] }}: {{ item[1] }} {% if item|length > 2 %}({{ item[2] }}){% endif %}</p>
+{% endfor %}
+<a href="/" style="margin-top: 40px; display: inline-block;">Voltar</a>
