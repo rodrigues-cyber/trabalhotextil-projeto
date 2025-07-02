@@ -1,3 +1,13 @@
+<<<<<<< HEAD
 Flask==2.3.3
 gunicorn==21.2.0
 mysql-connector-python==8.3.0
+=======
+Flask
+mysql-connector-python
+plotly
+pandas
+numpy
+scipy
+gunicorn
+>>>>>>> 3bc2cf1d269a602ed8ab47406c2dbd2533b6312f
