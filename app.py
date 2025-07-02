@@ -28,7 +28,7 @@ def obter_dados_maquina(tabela):
         return {
             'temperatura': row[1],
             'pressao': row[2],
-            'tempo': row[3],
+            'tempo': row[3] * 60,
             'vazao': row[4],
             'ph': row[5],
             'valvula': row[6],
@@ -88,10 +88,29 @@ def graficos_maquina(n):
         df = df.sort_values("horario")
 
         def grafico_linha(y, titulo, yaxis, cor='blue'):
+
             fig = go.Figure()
             fig.add_trace(go.Scatter(x=df['horario'], y=df[y], mode='lines+markers', line=dict(shape='spline', color=cor)))
+
+            # Adiciona linha de regressão linear apenas para temperatura ou pressão
+            if y in ['temperatura', 'pressao']:
+                import numpy as np
+                x_vals = np.arange(len(df))
+                y_vals = df[y].values
+                from scipy import stats
+                slope, intercept, r_value, p_value, std_err = stats.linregress(x_vals, y_vals)
+                trendline = slope * x_vals + intercept
+                fig.add_trace(go.Scatter(
+                    x=df['horario'],
+                    y=trendline,
+                    mode='lines',
+                    name='Tendência Linear',
+                    line=dict(dash='dash', color='black')
+                ))
+
             fig.update_layout(title=titulo, xaxis_title='Data/Hora', yaxis_title=yaxis, template='plotly_white')
             return pio.to_html(fig, full_html=False)
+
 
         def grafico_barras(y, titulo, yaxis):
             fig = go.Figure()
